@@ -42,20 +42,14 @@ projinit <full path to project parent directory> <package name>
 
 *Note*: pyproject.toml is configured to use setuptools as default backend. If you need to use other backend tools, make appropriate changes.
 
-After running the command successfully, you will have a project which can be built into wheel package and run using the same package name. For example, the following creates a helloworld project with a helloworld script.
+After running the command successfully, you will have a project which can be built into wheel package and run using the same package name. For example, the following steps would a helloworld project with a helloworld executable script.
 
-
->$ projinit . helloworld
->
->$ cd helloworld
->
->$ python3 -m build
->
->$ cd dist/
->
->$ python3 -m pip install helloworld-0.0.1-py3-none-any.whl
->
->$ helloworld 
->
->$ Hello World!
->
+```
+$ projinit . helloworld
+$ cd helloworld
+$ python3 -m build
+$ cd dist/
+$ python3 -m pip install helloworld-0.0.1-py3-none-any.whl
+$ helloworld 
+$ Hello World!
+```
