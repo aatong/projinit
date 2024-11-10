@@ -11,14 +11,14 @@ Projinit helps initialize a python project with the following structure:
 ```
 After installing projinit, you should be able to create a python project with the following command:
 ```
-$ projinit <full path to project parent directory> <package name>
+projinit <full path to project parent directory> <package name>
 ```
 # Prerequisite
 This project requires python3. You will also need to install python build package if not present. 
 
 To install build, run:
 ```
-$ python3 -m pip install build
+python3 -m pip install build
 ```
 
 # Build
@@ -32,7 +32,7 @@ Once you have build projinit, you should be able to find the wheel package under
 
 To install projinit, run:
 ```
-$ python3 -m pip install <wheel package name>
+python3 -m pip install <wheel package name>
 ```
 
 Once package is install, you can run projinit as follows to initalize python project structure:
@@ -44,12 +44,18 @@ projinit <full path to project parent directory> <package name>
 
 After running the command successfully, you will have a project which can be built into wheel package and run using the same package name. For example, the following creates a helloworld project with a helloworld script.
 
-```
-$ projinit . helloworld
-$ cd helloworld
-$ python3 -m build
-$ cd dist/
-$ python3 -m pip install helloworld-0.0.1-py3-none-any.whl
-$ helloworld 
-Hello World!
-```
+
+>$ projinit . helloworld
+>
+>$ cd helloworld
+>
+>$ python3 -m build
+>
+>$ cd dist/
+>
+>$ python3 -m pip install helloworld-0.0.1-py3-none-any.whl
+>
+>$ helloworld 
+>
+>$ Hello World!
+>
