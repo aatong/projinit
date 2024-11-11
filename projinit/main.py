@@ -1,5 +1,7 @@
 import subprocess
 import argparse
+import sys
+
 
 from projinit.license import license
 
@@ -12,7 +14,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{}"
 version = "0.0.1"
-requires-python = ">=3.13.0"
+requires-python = ">={}"
 readme = "README.md"
 dependencies = []
 
@@ -62,8 +64,10 @@ def main():
     run_command(f"touch {args.filepath}/{args.name}/{args.name}/__init__.py")
     #Create README.md
     run_command(f"echo \"#{args.name} package\" > {args.filepath}/{args.name}/README.md")
+    #Detect python version
+    ver = "{}.{}.{}".format(sys.version_info[0],sys.version_info[1],sys.version_info[2])
     #Create toml project
-    toml = toml_template.format(args.filepath + '/' + args.name + '/pyproject.toml', args.name, args.name, args.name)
+    toml = toml_template.format(args.filepath + '/' + args.name + '/pyproject.toml', args.name, ver, args.name, args.name)
     run_command(toml)
     #Create MIT license
     run_command(f"cat > {args.filepath}/{args.name}/LICENSE << EOF {license['mit']}")
